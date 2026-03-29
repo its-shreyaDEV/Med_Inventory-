@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Delete Medicine</title>
+  <link rel="stylesheet" href="../css/delete_med.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Delete Medicine</h2>
+
+    <label for="medicineSelect">Med Name:</label>
+    <select id="medicineSelect">
+      <option selected disabled>Select name</option>
+    </select>
+
+    <label>Disease Description:</label>
+    <textarea id="diseases" rows="2" readonly></textarea>
+
+    <label>Quantity in Inventory:</label>
+    <div class="quantity-group">
+      <input type="text" id="quantity" readonly />
+      <button onclick="subtractQuantity()">-</button>
+    </div>
+
+    <label>Price (₹):</label>
+    <input type="text" id="price" readonly />
+
+    <label>MRP Date:</label>
+    <input type="text" id="mrpDate" readonly />
+
+    <label>Expiry Date:</label>
+    <input type="text" id="expDate" readonly />
+
+    <button id="deleteBtn" class="delete-btn">Delete Medicine</button>
+  </div>
+
+  <script src="../js/delete_med.js"></script>
+</body>
+</html>

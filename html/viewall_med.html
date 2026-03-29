@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>view All Medicines</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      background: #f6f7fb;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #fff;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #34495e;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      padding: 10px 5px;
+      color: #333;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .sidebar ul li:hover,
+    .sidebar ul li.active {
+      background: #e6f0ff;
+      color: #1a73e8;
+    }
+
+    .view-options {
+      margin-top: 20px;
+    }
+
+    .view-options button {
+      margin: 4px;
+      padding: 6px 12px;
+      border: none;
+      background: #dce9f9;
+      color: #1a73e8;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      background: #1a73e8;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    main header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    main header input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      width: 250px;
+      border-radius: 4px;
+    }
+
+    #medicineContainer {
+      margin-top: 20px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .card-view {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .list-view {
+      grid-template-columns: 1fr;
+    }
+
+    .medicine-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .medicine-card:hover {
+      transform: scale(1.02);
+    }
+
+    .medicine-card.blur {
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .medicine-card .details {
+      display: none;
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .medicine-card.expanded .details {
+      display: block;
+    }
+
+    .medicine-card.expanded {
+      background: #f9f9f9;
+      border: 2px solid #1a73e8;
+    }
+
+    .medicine-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .basic {
+      font-size: 16px;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    .list-view .medicine-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .list-view .details {
+      display: block;
+    }
+
+    .list-view .medicine-card img {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>MedInventory</h2>
+    <nav>
+      <ul>
+        <li class="active">All Medicines</li>
+        <li>Tablets</li>
+        <li>Syrups</li>
+        <li>Injections</li>
+        <li>Capsules</li>
+        <li>Topical</li>
+      </ul>
+    </nav>
+    <div class="view-options">
+      <label>VIEW OPTIONS</label><br />
+      <button onclick="switchView('card')">Card</button>
+      <button onclick="switchView('list')">List</button>
+    </div>
+    <button class="back-btn" onclick="goBack()">← Back to Dashboard</button>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <header>
+      <h1>All Medicines</h1>
+      <input type="text" placeholder="Search medicines..." id="searchBox" oninput="filterMedicines()">
+    </header>
+
+    <section id="medicineContainer" class="card-view"></section>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    const medicineData = [
+      {
+        name: "Amoxicillin",
+        description: "Antibiotic",
+        expiry: "Dec 31, 2024",
+        mrp: "₹110",
+        brand: "PharmaCorp",
+        quantity: "250 units",
+        price: "₹100",
+        image: "https://i.imgur.com/Y5VZUMh.png"
+      },
+      {
+        name: "Paracetamol",
+        description: "Analgesic",
+        expiry: "Jun 15, 2024",
+        mrp: "₹35",
+        brand: "MediTech",
+        quantity: "15 units",
+        price: "₹30",
+        image: "    "
+      },
+      {
+        name: "Ibuprofen",
+        description: "NSAID",
+        expiry: "Sep 22, 2024",
+        mrp: "₹80",
+        brand: "HealthPlus",
+        quantity: "120 units",
+        price: "₹75",
+        image: " "
+      },
+      {
+        name: "Metformin",
+        description: "Antidiabetic",
+        expiry: "Jan 05, 2025",
+        mrp: "₹60",
+        brand: "GlucoCare",
+        quantity: "80 units",
+        price: "₹55",
+        image: "  "
+      }
+    ];
+
+    const container = document.getElementById('medicineContainer');
+
+    function renderMedicines() {
+      container.innerHTML = '';
+      medicineData.forEach((med) => {
+        const card = document.createElement('div');
+        card.className = 'medicine-card';
+        card.innerHTML = `  
+          <img src="${med.image}" alt="${med.name}">
+          <div class="basic">${med.name}</div>
+          <div>${med.description}</div>
+          <div class="details">
+            <p><strong>Expiry:</strong> ${med.expiry}</p>
+            <p><strong>MRP:</strong> ${med.mrp}</p>
+            <p><strong>Brand:</strong> ${med.brand}</p>
+            <p><strong>Qty:</strong> ${med.quantity}</p>
+            <p><strong>Price:</strong> ${med.price}</p>
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.medicine-card').forEach(c => {
+            if (c !== card) c.classList.toggle('blur', !card.classList.contains('expanded'));
+            else c.classList.toggle('expanded');
+          });
+        });
+
+        container.appendChild(card);
+      });
+    }
+
+    function switchView(view) {
+      container.className = view === 'card' ? 'card-view' : 'list-view';
+      document.querySelectorAll('.medicine-card').forEach(card => {
+        card.classList.remove('expanded', 'blur');
+      });
+      renderMedicines();
+    }
+
+    function goBack() {
+      alert('Back to dashboard');
+    }
+
+    function filterMedicines() {
+      const query = document.getElementById('searchBox').value.toLowerCase();
+      const cards = document.querySelectorAll('.medicine-card');
+      cards.forEach(card => {
+        const name = card.querySelector('.basic').textContent.toLowerCase();
+        card.style.display = name.includes(query) ? 'block' : 'none';
+      });
+    }
+
+    // Initial load
+    renderMedicines();
+  </script>
+</body>
+</html>

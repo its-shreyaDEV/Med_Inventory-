@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Medicine Inventory Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+
+<!-- Back Button -->
+<button class="back-btn" onclick="goToWelcome()">← Back to Menu</button>
+<h1 class="dashboard-title">Medicine Inventory Dashboard</h1>
+
+  <section class="inventory-section">
+    <h2 class="inventory-heading">Medicine Inventory</h2>
+<div class="card-grid">
+  <a class="card light-blue" href="add_newmed.html">
+    <div class="card-icon">➕</div>
+    <h3>Add New Medicine</h3>
+    <p>Register new medicines to the inventory.</p>
+  </a>
+  <a class="card light-yellow" href="delete_med.html">
+    <div class="card-icon">🗑️</div>
+    <h3>Remove Medicine</h3>
+    <p>Delete medicines from the inventory.</p>
+  </a>
+  <a class="card soft-orange" href="update_med.html">
+    <div class="card-icon">✏️</div>
+    <h3>Update Medicine Info</h3>
+    <p>Edit medicine details and information.</p>
+  </a>
+  <a class="card light-purple" href="viewall_med.html">
+    <div class="card-icon">📋</div>
+    <h3>View All Medicines</h3>
+    <p>Browse complete medicine inventory.</p>
+  </a>
+  <a class="card soft-green" href="  ">
+    <div class="card-icon">🕒</div>
+    <h3>Check Expiry/Stock</h3>
+    <p>Monitor expiry dates and stock levels.</p>
+  </a>
+  <a class="card light-yellow" href="  ">
+    <div class="card-icon"> 💸</div>
+    <h3>Buy/Sell Medicines</h3>
+    <p>Buy the medicine as a customer or sell as a employ.</p>
+  </a>
+</div>
+  </section>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

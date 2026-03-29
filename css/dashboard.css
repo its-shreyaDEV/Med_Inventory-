@@ -1,0 +1,102 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+  color: #1f2937;
+}
+
+.back-btn {
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.inventory-section {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.inventory-heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #111827;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.card-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.light-blue {
+  background-color: #e0f2fe;
+}
+.light-yellow {
+  background-color: #fef9c3;
+}
+.soft-orange {
+  background-color: #fde68a;
+}
+.light-purple {
+  background-color: #ddd6fe;
+}
+.soft-green {
+  background-color: #d1fae5;
+}
+.card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h3,
+.card p,
+.card .card-icon {
+  text-decoration: none;
+  color: inherit;
+}

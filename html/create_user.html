@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create New User</title>
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+<body>
+
+  <!-- No Header -->
+
+  <!-- Main create user form -->
+  <div class="main-content">
+    <div class="login-form">
+      <h3>Create New User</h3>
+      <form id="createUserForm">
+        <fieldset>
+          <legend>Your UserID</legend>
+
+          <!-- Username -->
+          <label for="Username">Username:</label>
+          <input type="text" id="Username" name="Username" placeholder="Enter your UserID" required />
+
+          <!-- Email -->
+          <label for="email">Email ID:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your Email ID" required />
+
+          <!-- Phone -->
+          <label for="phone">Phone No.:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your Phone Number" required pattern="[0-9]{10}" title="Enter 10 digit phone number" />
+
+          <!-- Password -->
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+          <!-- Submit button -->
+          <div class="submit-container">
+            <button type="submit">Submit</button>
+          </div>
+
+          <!-- Link to login page -->
+          <div class="create-user-link">
+            <p>Already have an account?
+              <a href="login.html">Login here</a>
+            </p>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; com.uneecop.medicine@gmail.com <br />
+    Email address: mea@uneecops.com <br />
+    <a href="https://www.uneecops.com/contact-us/">Contact Link</a>
+  </footer>
+
+  <script src="../js/create_user.js"></script>
+
+</body>
+</html>

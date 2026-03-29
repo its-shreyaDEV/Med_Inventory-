@@ -1,0 +1,198 @@
+<!-- File: MEDINVENTORY PROJECT1/html/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MedInventory System</title>
+
+  <style>
+    /* Full-page background image */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://media.sortly.com/wp-content/uploads/2018/07/12130452/Flat-lay-of-various-medical-supplies-on-gray-background-624567292_2125x1416-1200x628.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Blur overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px);
+      z-index: -1;
+    }
+
+    /* Header styling */
+    header {
+      background-color: #004b87;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    /* Centering login form */
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Login form styling */
+    .login-form {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 350px;
+    }
+
+    .login-form h3 {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    /* Submit button */
+    .submit-container {
+      text-align: center;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    /* Create ID link style */
+    .create-user-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .create-user-link a {
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .create-user-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #004b87;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>MedInventory</header>
+
+  <!-- Main login form -->
+  <div class="main-content">
+    <div class="login-form">
+      <h3>Login Credentials:</h3>
+      <form id="loginForm">
+        <fieldset>
+          <legend>Your UserID</legend>
+
+          <!-- Username -->
+          <label for="Username">Username:</label>
+          <input type="text" id="Username" name="Username" placeholder="Enter your UserID" required />
+
+          <!-- Password -->
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+          <!-- Submit button -->
+          <div class="submit-container">
+            <button type="submit">Submit</button>
+          </div>
+
+          <!-- Create Login ID link -->
+          <div class="create-user-link">
+            <p>Don't have an account?
+              <a href="NEW_USER_PAGE.html">Create Login ID</a>
+            </p>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; com.uneecop.medicine@gmail.com <br />
+    Email address: mea@uneecops.com <br />
+    <a href="https://www.uneecops.com/contact-us/">Contact Link</a>
+  </footer>
+
+  <script>
+    // Validate login form on submit
+    function validateLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById('Username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!username || !password) {
+        alert("Please enter both username and password.");
+        return;
+      }
+
+      // Simulated redirect
+      window.location.href = "dashboard.html";
+    }
+
+    // Attach submit event when DOM is ready
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("loginForm").addEventListener("submit", validateLogin);
+    });
+  </script>
+
+</body>
+</html>

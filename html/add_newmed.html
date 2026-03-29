@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Medicine</title>
+  <link rel="stylesheet" href="../css/add_newmed.css">
+</head>
+
+<body>
+  <!-- Main Form Container -->
+  <div class="container">
+    <h1>Add New Medicine</h1>
+
+    <form id="addMedForm">
+      <label for="image">Upload Image:</label>
+      <input type="file" id="image" name="image" accept="image/*">
+
+      <label for="medName">Med Name:</label>
+      <input type="text" id="medName" name="name" placeholder="Enter Med name" required>
+
+      <label for="medBrand">Brand Name:</label>
+      <input type="text" id="medBrand" name="brand" placeholder="Enter brand name" required>
+
+      <label for="diseasesDesc">Disease Description:</label>
+      <textarea id="diseasesDesc" name="desc" rows="3" placeholder="E.g., fever, cold, headache" required></textarea>
+
+      <label for="quantity">Quantity:</label>
+      <div class="quantity-wrapper">
+        <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+        <button type="button" onclick="increaseQty()">+</button>
+      </div>
+
+      <label for="price">Price (₹):</label>
+      <input type="number" id="price" name="price" placeholder="Rs.0.00" required>
+
+      <label for="mrpDate">MRP Date:</label>
+      <input type="date" id="mrpDate" name="mrp" required>
+
+      <label for="expDate">Expiry Date:</label>
+      <input type="date" id="expDate" name="exp" required>
+
+      <button type="submit">Add Medicine</button>
+    </form>
+
+    <div id="responseMessage"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; com.uneecop.medicine@gmail.com <br />
+    Email: mea@uneecops.com <br />
+    <a href="https://www.uneecops.com/contact-us/">Contact Us</a>
+  </footer>
+
+  <!-- JS File -->
+  <script src="../js/add_newmed.js"></script>
+</body>
+</html>

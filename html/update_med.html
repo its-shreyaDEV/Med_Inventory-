@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Medicine</title>
+  <link rel="stylesheet" href="../css/update_med.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h2>Update Medicine Details</h2>
+
+    <label for="brandSelect">Med Name:</label>
+    <select id="brandSelect" onchange="populateForm()">
+      <option selected disabled>Select Brand</option>
+    </select>
+
+    <label>Disease Description:</label>
+    <textarea id="disease" rows="2" readonly></textarea>
+
+    <label>Quantity in Inventory:</label>
+    <div class="quantity-group">
+      <input type="text" id="quantity" readonly>
+      <button onclick="subtractQuantity()">-</button>
+
+      <input type="number" id="quantityNum" readonly>
+      <button type="button" onclick="increaseQty()">+</button>
+    </div>
+
+    <label>Price (₹):</label>
+    <input type="text" id="price" readonly>
+
+    <label>MRP Date:</label>
+    <input type="text" id="mrpDate" readonly>
+
+    <label>Expiry Date:</label>
+    <input type="text" id="expiryDate" readonly>
+
+    <button class="delete-btn">Delete Medicine</button>
+  </div>
+
+  <footer>
+    &copy; com.uneecop.medicine@gmail.com<br />
+    Email: mea@uneecops.com<br />
+    <a href="https://www.uneecops.com/contact-us/">Contact Us</a>
+  </footer>
+
+  <script src="../js/update_med.js"></script>
+</body>
+</html>

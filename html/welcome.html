@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medicine Inventory Management</title>
+  <link rel="stylesheet" href="../css/welcome.css" />
+</head>
+<body>
+  <header>Medicine Inventory Management</header>
+
+  <nav>
+    <a href="welcome.html"><button>Home</button></a>
+    <a href="dashboard.html"><button>Dashboard</button></a>
+    <!-- <button onclick="scrollToCarousel()">Show Medicines</button> -->
+   <a href=" "><button>About</button></a>
+   <a href=" login.html"><button>Logout</button></a>
+  </nav>
+
+  <div class="welcome">Welcome to the medicine inventory panel</div>
+
+  <div class="carousel" id="carousel">
+    <span class="nav-arrow" onclick="prevSlide()">⟨</span>
+    <div class="card" id="card-container">
+    
+    </div>
+    <span class="nav-arrow" onclick="nextSlide()">⟩</span>
+  </div>
+
+  
+
+  <script src="./js/welcome.js"></script>
+</body>
+</html>
