@@ -22,5 +22,8 @@ A web-based Medical Inventory Management System designed to help pharmacies or s
 
 ## 🔧 Installation & Setup
 1. Clone the repository:
-   ```bash
-   git clone [https://github.com/its-shreyaDEV/Med_Inventory-.git](https://github.com/its-shreyaDEV/Med_Inventory-.git)
+   `git clone https://github.com/its-shreyaDEV/Med_Inventory-.git`
+2. Open **Spring Tool Suite (STS)**.
+3. Go to `File` > `Import` > `Existing Maven Projects` (if using Maven) or `General` > `Existing Projects into Workspace`.
+4. Configure your `application.properties` with your MySQL/MongoDB credentials.
+5. Run the project as a **Spring Boot App** or on a **Server (Tomcat)**.
