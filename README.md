@@ -10,9 +10,11 @@ A web-based Medical Inventory Management System designed to help pharmacies or s
 
 ## 🛠️ Tech Stack
 * **Frontend:** HTML5, CSS3, JavaScript (ES6+)
-* **Backend:** Java
-* **Database:** MySQLand MongoDB
+* **Backend:** Advanced Java (Servlets/JSP or Spring Boot)
+* **IDE:** Spring Tool Suite (STS 4)
+* **Database:** MySQL & MongoDB
 
+  
 ## 📂 Project Structure
 * `/html`: Contains the structure of all pages (Dashboard, Login, etc.).
 * `/css`: Custom styling for each module.
